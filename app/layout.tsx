@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Nunito, Playfair_Display } from "next/font/google";
+import { JsonLd } from "@/components/json-ld";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -16,16 +18,40 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Grupo de promoções Bambolê Kids",
-  description:
-    "Entre no grupo VIP da Bambolê Kids no WhatsApp e receba primeiro as melhores promoções de moda infantil. Lages/SC, envio para todo o Brasil.",
+  metadataBase: new URL(site.url),
+  title: { default: site.title, template: `%s | ${site.name}` },
+  description: site.description,
+  applicationName: site.name,
+  keywords: [
+    "moda infantil",
+    "roupa infantil",
+    "promoções roupa infantil",
+    "grupo whatsapp promoções",
+    "Bambolê Kids",
+    "Lages SC",
+    ...site.brands,
+  ],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Grupo de promoções Bambolê Kids",
-    description:
-      "As melhores promoções de moda infantil chegam primeiro no grupo do WhatsApp.",
-    locale: "pt_BR",
     type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
   },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+  },
+  robots: { index: true, follow: true },
+  category: "shopping",
+};
+
+export const viewport: Viewport = {
+  themeColor: site.colors.rosa,
+  colorScheme: "light",
 };
 
 const RootLayout = ({ children }: LayoutProps<"/">) => (
@@ -33,7 +59,10 @@ const RootLayout = ({ children }: LayoutProps<"/">) => (
     lang="pt-BR"
     className={`${playfair.variable} ${nunito.variable} h-full antialiased`}
   >
-    <body className="min-h-full flex flex-col">{children}</body>
+    <body className="min-h-full flex flex-col">
+      {children}
+      <JsonLd />
+    </body>
   </html>
 );
 
