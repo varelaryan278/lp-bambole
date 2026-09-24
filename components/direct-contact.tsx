@@ -19,9 +19,17 @@ const steps = [
 const bubbles = [
   { from: "you", text: "Oi! Tenho uma menina tam 4, o que tem disponível?" },
   { from: "shop", text: "Oi, mamãe! 💗 Vou te mandar tudo que tenho no 4, um minutinho" },
-  { from: "shop", text: "📷 📷 📷" },
+  { from: "shop", photos: true },
   { from: "you", text: "Amei o vestido azul! Como faço pra levar?" },
 ];
+
+const Photos = () => (
+  <span className="flex gap-1.5">
+    {[0, 1, 2].map((i) => (
+      <span key={i} className="size-14 rounded-md bg-gradient-to-br from-nuvem via-[#f7c7d8] to-rosa/70" />
+    ))}
+  </span>
+);
 
 export const DirectContact = () => (
   <section className="px-4 py-20">
@@ -66,7 +74,7 @@ export const DirectContact = () => (
                 bubble.from === "you" ? "rounded-tr-none bg-[#d9fdd3]" : "rounded-tl-none bg-white"
               }`}
             >
-              {bubble.text}
+              {bubble.photos ? <Photos /> : bubble.text}
             </p>
           </div>
         ))}

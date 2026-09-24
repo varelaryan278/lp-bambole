@@ -12,12 +12,12 @@ export const site = {
     "Entre no grupo VIP da Bambolê Kids e receba primeiro as promoções de moda infantil: Mon Sucre, Petit Cherie e mais, com envio para todo o Brasil.",
   city: "Lages",
   state: "SC",
-  phone: "+55 49 98213-459",
+  phone: "+55 49 99075-216",
   instagramHandle: "bambole_kids.modainfantil",
   instagramUrl: "https://www.instagram.com/bambole_kids.modainfantil/",
-  whatsappUrl: "https://wa.me/554998213459",
-  whatsappDirectUrl: `https://wa.me/554998213459?text=${encodeURIComponent(
-    "Oi, Bambolê! Vim pelo site e quero ver as peças disponíveis 💗 Tamanho:",
+  whatsappUrl: "https://wa.me/554999075216",
+  whatsappDirectUrl: `https://wa.me/554999075216?text=${encodeURIComponent(
+    "Oi, Bambolê! Vim pelo site e quero ver as peças disponíveis. Tamanho:",
   )}`,
   groupUrl: "https://chat.whatsapp.com/FgQ606FxKvTFlrJMFMVyUQ?mode=wwt",
   followers: "11 mil",
