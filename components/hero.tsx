@@ -1,6 +1,6 @@
 import { ChatPreview } from "@/components/chat-preview";
 import { Crown } from "@/components/crown";
-import { WhatsappButton } from "@/components/whatsapp-button";
+import { CtaPair } from "@/components/cta-pair";
 import { site } from "@/lib/site";
 
 export const Hero = () => (
@@ -34,7 +34,12 @@ export const Hero = () => (
             Instagram. Gostou? Responde no privado e a gente separa.
           </p>
 
-          <WhatsappButton className="mt-8" />
+          <CtaPair className="mt-8" />
+
+          <p className="mt-4 max-w-md text-sm text-ameixa-suave">
+            Não curte grupo? Fala direto com a gente: diz o tamanho e recebe as
+            peças disponíveis no privado.
+          </p>
 
           <p className="mt-5 text-sm font-semibold text-ameixa-suave">
             {site.followers} mães já acompanham a Bambolê no Instagram

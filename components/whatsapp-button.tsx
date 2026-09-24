@@ -2,6 +2,8 @@ import { site } from "@/lib/site";
 
 type Props = {
   label?: string;
+  href?: string;
+  variant?: "primary" | "secondary";
   className?: string;
 };
 
@@ -11,12 +13,22 @@ const WhatsappIcon = () => (
   </svg>
 );
 
-export const WhatsappButton = ({ label = "Entrar no grupo", className = "" }: Props) => (
+const variants = {
+  primary: "bg-rosa text-white shadow-[0_10px_30px_-10px_var(--color-rosa)] hover:bg-rosa-escuro",
+  secondary: "border-2 border-rosa bg-white text-rosa hover:bg-rosa hover:text-white",
+};
+
+export const WhatsappButton = ({
+  label = "Entrar no grupo",
+  href = site.groupUrl,
+  variant = "primary",
+  className = "",
+}: Props) => (
   <a
-    href={site.groupUrl}
+    href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className={`inline-flex items-center justify-center gap-3 rounded-full bg-rosa px-8 py-4 text-lg font-bold text-white shadow-[0_10px_30px_-10px_var(--color-rosa)] transition-colors hover:bg-rosa-escuro focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-dourado ${className}`}
+    className={`inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-lg font-bold transition-colors focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-dourado ${variants[variant]} ${className}`}
   >
     <WhatsappIcon />
     {label}

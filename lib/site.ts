@@ -16,8 +16,11 @@ export const site = {
   instagramHandle: "bambole_kids.modainfantil",
   instagramUrl: "https://www.instagram.com/bambole_kids.modainfantil/",
   whatsappUrl: "https://wa.me/554998213459",
+  whatsappDirectUrl: `https://wa.me/554998213459?text=${encodeURIComponent(
+    "Oi, Bambolê! Vim pelo site e quero ver as peças disponíveis 💗 Tamanho:",
+  )}`,
   groupUrl: "https://chat.whatsapp.com/FgQ606FxKvTFlrJMFMVyUQ?mode=wwt",
   followers: "11 mil",
-  brands: ["Mon Sucre", "Petit Cherie", "Kukiê", "Momi", "Infanti"],
+  brands: ["Mon Sucre", "Petit Cherie", "Kukiê", "Infanti"],
   colors: { rosa: "#e6407e", nuvem: "#fbe4ec", creme: "#fff8f1", dourado: "#d9a441", ameixa: "#3a1f2c" },
 };

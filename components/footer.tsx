@@ -14,7 +14,7 @@ export const Footer = () => (
         @{site.instagramHandle}
       </a>
       <a
-        href={site.whatsappUrl}
+        href={site.whatsappDirectUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="underline decoration-rosa/40 underline-offset-4 hover:text-rosa"

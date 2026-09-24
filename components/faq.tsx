@@ -1,5 +1,9 @@
 const questions = [
   {
+    q: "Preciso entrar no grupo pra comprar?",
+    a: "Não. Chama no WhatsApp, diz o tamanho e a gente manda as peças disponíveis no privado. O grupo é só pra quem quer receber as promoções primeiro.",
+  },
+  {
     q: "O grupo é gratuito?",
     a: "Sim. Você entra de graça e só paga se quiser comprar alguma peça.",
   },

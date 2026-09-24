@@ -1,5 +1,6 @@
 import { Benefits } from "@/components/benefits";
 import { Brands } from "@/components/brands";
+import { DirectContact } from "@/components/direct-contact";
 import { Faq } from "@/components/faq";
 import { FinalCta } from "@/components/final-cta";
 import { Footer } from "@/components/footer";
@@ -13,6 +14,7 @@ const Home = () => (
       <Benefits />
       <Brands />
       <HowItWorks />
+      <DirectContact />
       <Faq />
       <FinalCta />
     </main>
