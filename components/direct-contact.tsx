@@ -59,6 +59,7 @@ export const DirectContact = () => (
           label="Falar no privado"
           href={site.whatsappDirectUrl}
           variant="secondary"
+          event="Contact"
           className="mt-10"
         />
         <p className="mt-4 text-sm text-ameixa-suave">

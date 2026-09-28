@@ -10,6 +10,7 @@ export const CtaPair = ({ className = "" }: Props) => (
       label="Falar no privado"
       href={site.whatsappDirectUrl}
       variant="secondary"
+      event="Contact"
     />
   </div>
 );

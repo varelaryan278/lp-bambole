@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito, Playfair_Display } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
+import { MetaPixel } from "@/components/meta-pixel";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -62,6 +63,7 @@ const RootLayout = ({ children }: LayoutProps<"/">) => (
     <body className="min-h-full flex flex-col">
       {children}
       <JsonLd />
+      <MetaPixel />
     </body>
   </html>
 );

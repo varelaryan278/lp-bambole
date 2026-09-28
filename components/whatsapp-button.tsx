@@ -1,9 +1,13 @@
+"use client";
+
+import { trackMetaEvent, type MetaEventName } from "@/lib/meta-events";
 import { site } from "@/lib/site";
 
 type Props = {
   label?: string;
   href?: string;
   variant?: "primary" | "secondary";
+  event?: MetaEventName;
   className?: string;
 };
 
@@ -22,12 +26,14 @@ export const WhatsappButton = ({
   label = "Entrar no grupo",
   href = site.groupUrl,
   variant = "primary",
+  event = "Lead",
   className = "",
 }: Props) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
+    onClick={() => trackMetaEvent(event)}
     className={`inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-lg font-bold transition-colors focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-dourado ${variants[variant]} ${className}`}
   >
     <WhatsappIcon />
