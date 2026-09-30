@@ -19,7 +19,7 @@ export const site = {
   whatsappDirectUrl: `https://wa.me/554999075216?text=${encodeURIComponent(
     "Oi, Bambolê! Vim pelo site e quero ver as peças disponíveis. Tamanho:",
   )}`,
-  groupUrl: "https://chat.whatsapp.com/FgQ606FxKvTFlrJMFMVyUQ?mode=wwt",
+  groupUrl: "https://chat.whatsapp.com/EnGj9DmIMQXDI0tPTJa6x8",
   followers: "11 mil",
   brands: ["Mon Sucre", "Petit Cherie", "Kukiê", "Infanti"],
   colors: { rosa: "#e6407e", nuvem: "#fbe4ec", creme: "#fff8f1", dourado: "#d9a441", ameixa: "#3a1f2c" },
