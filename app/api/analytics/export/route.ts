@@ -1,8 +1,13 @@
 import { eventsAsText, readEvents } from "@/lib/analytics";
+import { validPanelKey } from "@/lib/panel-auth";
+import type { NextRequest } from "next/server";
 
 export const runtime = "nodejs";
 
-export const GET = async () => {
+export const GET = async (request: NextRequest) => {
+  if (!validPanelKey(request.cookies.get("bambole_painel")?.value)) {
+    return new Response("Acesso restrito", { status: 403 });
+  }
   try {
     const events = await readEvents();
     return new Response(eventsAsText(events), {

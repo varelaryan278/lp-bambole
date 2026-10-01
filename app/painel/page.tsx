@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
+import { cookies } from "next/headers";
 import { readEvents, type AnalyticsEvent } from "@/lib/analytics";
+import { validPanelKey } from "@/lib/panel-auth";
 
 export const metadata: Metadata = {
   title: "Painel de tráfego",
@@ -199,6 +201,9 @@ const RecentClicks = ({ events }: { events: AnalyticsEvent[] }) => {
 
 const Painel = async () => {
   await connection();
+  if (!validPanelKey((await cookies()).get("bambole_painel")?.value)) {
+    return <main className="mx-auto max-w-4xl p-8">Acesso restrito. Abra o link privado do painel.</main>;
+  }
   let events: AnalyticsEvent[];
   try {
     events = await readEvents();
