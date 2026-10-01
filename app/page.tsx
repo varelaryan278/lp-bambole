@@ -6,9 +6,11 @@ import { FinalCta } from "@/components/final-cta";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
+import { VisitTracker } from "@/components/visit-tracker";
 
 const Home = () => (
   <>
+    <VisitTracker />
     <Hero />
     <main>
       <Benefits />

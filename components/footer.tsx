@@ -22,5 +22,8 @@ export const Footer = () => (
         Falar no WhatsApp
       </a>
     </div>
+    <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed">
+      Registramos visitas, cliques, origem e localização aproximada pelo IP para medir esta página. Nome e telefone só são registrados se você os enviar no formulário.
+    </p>
   </footer>
 );

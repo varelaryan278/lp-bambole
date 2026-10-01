@@ -1,6 +1,9 @@
 "use client";
 
+import { useState, type MouseEvent } from "react";
+import { ContactPrompt } from "@/components/contact-prompt";
 import { trackMetaEvent, type MetaEventName } from "@/lib/meta-events";
+import { trackAnalytics } from "@/components/visit-tracker";
 import { site } from "@/lib/site";
 
 type Props = {
@@ -28,15 +31,33 @@ export const WhatsappButton = ({
   variant = "primary",
   event = "Lead",
   className = "",
-}: Props) => (
+}: Props) => {
+  const [promptOpen, setPromptOpen] = useState(false);
+  const onClick = (clickEvent: MouseEvent<HTMLAnchorElement>) => {
+    trackMetaEvent(event);
+    trackAnalytics("click", { destination: event === "Lead" ? "group" : "direct" }).catch(() => {});
+    try {
+      const count = Number(window.localStorage.getItem("bambole_click_count") || "0") + 1;
+      window.localStorage.setItem("bambole_click_count", String(count));
+      if (count >= 3 && !window.localStorage.getItem("bambole_prompt_seen")) {
+        window.localStorage.setItem("bambole_prompt_seen", "1");
+        clickEvent.preventDefault();
+        setPromptOpen(true);
+      }
+    } catch { /* private browsing can block storage */ }
+  };
+
+  return <>
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    onClick={() => trackMetaEvent(event)}
+    onClick={onClick}
     className={`inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-lg font-bold transition-colors focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-dourado ${variants[variant]} ${className}`}
   >
     <WhatsappIcon />
     {label}
   </a>
-);
+  {promptOpen && <ContactPrompt href={href} onClose={() => setPromptOpen(false)} />}
+  </>;
+};
