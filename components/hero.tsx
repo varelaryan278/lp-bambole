@@ -37,7 +37,7 @@ export const Hero = () => (
 
           <CtaPair className="mt-8" />
 
-          <StoreLink className="mt-5" />
+          <StoreLink className="mt-3" />
 
           <p className="mt-4 max-w-md text-sm text-ameixa-suave">
             Não curte grupo? Fala direto com a gente: diz o tamanho e recebe as

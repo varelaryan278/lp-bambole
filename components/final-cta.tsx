@@ -16,7 +16,7 @@ export const FinalCta = () => (
       </h2>
       <p className="mt-5 text-lg text-ameixa-suave">Do jeito que você preferir.</p>
       <CtaPair className="mt-8 lg:justify-center" />
-      <StoreLink className="mt-6" />
+      <StoreLink className="mt-3" />
     </div>
   </section>
 );
