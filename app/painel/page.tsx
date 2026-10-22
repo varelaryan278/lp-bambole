@@ -21,6 +21,8 @@ const dayKey = (date: Date) => {
   return `${part("year")}-${part("month")}-${part("day")}`;
 };
 const visitorKey = (event: AnalyticsEvent) => event.visitorId || event.ip;
+const destinationLabels = { group: "Grupo", direct: "Privado", store: "Loja" };
+
 const location = (event: AnalyticsEvent) =>
   [event.city, event.region, event.country].filter(Boolean).join(" / ") || "Não identificada";
 
@@ -45,6 +47,7 @@ const summarize = (events: AnalyticsEvent[]) => {
     threePlus: [...clickCounts.values()].filter((count) => count >= 3).length,
     group: clicks.filter((event) => event.destination === "group").length,
     direct: clicks.filter((event) => event.destination === "direct").length,
+    store: clicks.filter((event) => event.destination === "store").length,
     rate: uniqueVisitors ? `${((leadVisitors / uniqueVisitors) * 100).toFixed(1).replace(".", ",")}%` : "0%",
   };
 };
@@ -71,7 +74,7 @@ const Summary = ({ title, events }: { title: string; events: AnalyticsEvent[] })
           </div>
         ))}
       </div>
-      <p className="mt-4 text-sm text-ameixa-suave">Grupo: {stats.group} cliques · Privado: {stats.direct} cliques</p>
+      <p className="mt-4 text-sm text-ameixa-suave">Grupo: {stats.group} cliques · Privado: {stats.direct} cliques · Loja: {stats.store} cliques</p>
     </section>
   );
 };
@@ -187,7 +190,7 @@ const RecentClicks = ({ events }: { events: AnalyticsEvent[] }) => {
             <tr key={`${event.at}-${index}`} className="border-b border-nuvem/60">
               <td className="py-3">{dateFormatter.format(new Date(event.at))}</td>
               <td>{event.ip}</td><td>{location(event)}</td>
-              <td>{event.destination === "group" ? "Grupo" : "Privado"}</td>
+              <td>{destinationLabels[event.destination || "direct"]}</td>
               <td>{event.source || "—"}</td><td>{event.campaign || "—"}</td>
               <td>{count}º clique</td>
             </tr>

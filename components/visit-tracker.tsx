@@ -19,7 +19,7 @@ export const getVisitorId = () => {
 
 export const trackAnalytics = (
   type: "visit" | "click" | "contact",
-  details: { destination?: "group" | "direct"; name?: string; phone?: string } = {},
+  details: { destination?: "group" | "direct" | "store"; name?: string; phone?: string } = {},
 ) => {
   const params = new URLSearchParams(window.location.search);
   const referrer = document.referrer ? new URL(document.referrer).hostname : "";

@@ -21,6 +21,14 @@ export const Footer = () => (
       >
         Falar no WhatsApp
       </a>
+      <a
+        href={site.storeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline decoration-rosa/40 underline-offset-4 hover:text-rosa"
+      >
+        Loja online
+      </a>
     </div>
     <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed">
       Registramos visitas, cliques, origem e localização aproximada pelo IP para medir esta página. Nome e telefone só são registrados se você os enviar no formulário.

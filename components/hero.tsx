@@ -1,6 +1,7 @@
 import { ChatPreview } from "@/components/chat-preview";
 import { Crown } from "@/components/crown";
 import { CtaPair } from "@/components/cta-pair";
+import { StoreLink } from "@/components/store-link";
 import { site } from "@/lib/site";
 
 export const Hero = () => (
@@ -35,6 +36,8 @@ export const Hero = () => (
           </p>
 
           <CtaPair className="mt-8" />
+
+          <StoreLink className="mt-5" />
 
           <p className="mt-4 max-w-md text-sm text-ameixa-suave">
             Não curte grupo? Fala direto com a gente: diz o tamanho e recebe as

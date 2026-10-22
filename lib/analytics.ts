@@ -8,7 +8,7 @@ export type AnalyticsEvent = {
   type: "visit" | "click" | "contact";
   ip: string;
   visitorId?: string;
-  destination?: "group" | "direct";
+  destination?: "group" | "direct" | "store";
   source?: string;
   medium?: string;
   campaign?: string;

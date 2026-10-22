@@ -1,4 +1,5 @@
 import { CtaPair } from "@/components/cta-pair";
+import { StoreLink } from "@/components/store-link";
 
 export const FinalCta = () => (
   <section className="scallop-bottom bg-nuvem px-4 py-20 text-center">
@@ -15,6 +16,7 @@ export const FinalCta = () => (
       </h2>
       <p className="mt-5 text-lg text-ameixa-suave">Do jeito que você preferir.</p>
       <CtaPair className="mt-8 lg:justify-center" />
+      <StoreLink className="mt-6" />
     </div>
   </section>
 );

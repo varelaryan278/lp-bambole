@@ -40,7 +40,7 @@ export const POST = async (request: NextRequest) => {
   if (input.type !== "visit" && input.type !== "click" && input.type !== "contact") {
     return Response.json({ error: "Evento inválido" }, { status: 400 });
   }
-  if (input.type === "click" && input.destination !== "group" && input.destination !== "direct") {
+  if (input.type === "click" && input.destination !== "group" && input.destination !== "direct" && input.destination !== "store") {
     return Response.json({ error: "Destino inválido" }, { status: 400 });
   }
   const name = clean(input.name)?.trim();
@@ -58,7 +58,7 @@ export const POST = async (request: NextRequest) => {
     ip: ip.slice(0, 64),
     visitorId: typeof input.visitorId === "string" && /^[0-9a-f-]{36}$/i.test(input.visitorId)
       ? input.visitorId : undefined,
-    ...(input.type === "click" ? { destination: input.destination as "group" | "direct" } : {}),
+    ...(input.type === "click" ? { destination: input.destination as "group" | "direct" | "store" } : {}),
     source: clean(input.source),
     medium: clean(input.medium),
     campaign: clean(input.campaign),

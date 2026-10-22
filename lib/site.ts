@@ -20,6 +20,7 @@ export const site = {
     "Oi, Bambolê! Vim pelo site e quero ver as peças disponíveis. Tamanho:",
   )}`,
   groupUrl: "https://chat.whatsapp.com/EnGj9DmIMQXDI0tPTJa6x8",
+  storeUrl: "https://usebambolekids.com.br/",
   followers: "11 mil",
   brands: ["Mon Sucre", "Petit Cherie", "Kukiê", "Infanti"],
   colors: { rosa: "#e6407e", nuvem: "#fbe4ec", creme: "#fff8f1", dourado: "#d9a441", ameixa: "#3a1f2c" },

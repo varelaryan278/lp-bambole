@@ -4,6 +4,10 @@ const questions = [
     a: "Não. Chama no WhatsApp, diz o tamanho e a gente manda as peças disponíveis no privado. O grupo é só pra quem quer receber as promoções primeiro.",
   },
   {
+    q: "Dá pra comprar pelo site?",
+    a: "Sim. A loja online usebambolekids.com.br tem as peças com tamanho e preço, é só escolher e finalizar a compra por lá.",
+  },
+  {
     q: "O grupo é gratuito?",
     a: "Sim. Você entra de graça e só paga se quiser comprar alguma peça.",
   },
